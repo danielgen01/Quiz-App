@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/0b2e7c2d7b.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>Daniel's Quiz</title>
+</head>
+<body>
+    <header>
+    <h1>Welcome to my own  <span style="color: #e6cb04 ;"> Quiz </span></h1>
+    <p>This is a <span style="color: #e6cb04 ;">one choice quiz</span>, click on the correct answer</p>
+</header>
+<hr>
+<main>
+    <h3 id="question">-</h3>
+    <div class="boxes">
+
+
+    <div class="box" id="box-1">
+        <h1 id="answer-1"></h1>
+    </div>
+
+    <p id="correctornot1"><i class="fa-solid fa-hands-clapping"></i> Congrulations, your answer is correct ! </p>
+
+    <div class="box" id="box-2">
+        <h1 id="answer-2"></h1>
+    </div>
+
+    <p id="correctornot2">Sorry, but you're wrong :(</p>
+
+    <div class="box" id="box-3">
+        <h1 id="answer-3"></h1>
+    </div>
+
+    <p id="correctornot3">Sorry, but you're wrong :(</p>
+
+    <div class="box" id="box-4">
+        <h1 id="answer-4"></h1>
+    </div>
+
+    <p id="correctornot4">Sorry, but you're wrong :(</p>
+
+    <h2 id="test"></h2>
+
+</div>
+</main>
+    
+
+<script>
+// QUESTIONS 
+let questions = ['What is the capital of France ? ',
+ 'How many buttons or keys has an ordinary english keyboard ? ' ,
+  'In which year was JavaScript introduced ?', 
+'Which of these languages is only useful for frontend development ? ']
+
+//ANSWERS FOR QUESTIONS 
+let answersQ1 = ['Paris', 'Madrid' , 'Strasbourg', 'Cologne'];
+let answersQ2 = [92, 104 ,54, 72];
+let answersQ3 = [2000, 1999, 1995, 1996];
+let answersQ4 = ['HTML', 'JavaScript' , 'Python', 'C#'];
+
+ 
+  
+// QUESTION GENERATOR RANDOM 
+
+    let randoNum = Math.floor(Math.random() * 4) ;
+
+
+
+//CORRECT ANSWERS 
+
+let correctAnswers1 = answersQ1[0];
+let correctAnswers2 = answersQ2[1];
+let correctAnswers3 = answersQ3[2];
+let correctAnswers4 = answersQ4[1];
+//CONDITIONALS 
+
+if(randoNum === 0){
+  document.getElementById('question').innerHTML = questions[0] ; // JS conditional for the question 
+  document.getElementById('answer-1').innerHTML = answersQ1[0] ; // These are the belonging answers          CORRECT ANSWER
+  document.getElementById('answer-2').innerHTML = answersQ1[1] ; // These are the belonging answers 
+  document.getElementById('answer-3').innerHTML = answersQ1[2] ; // These are the belonging answers 
+  document.getElementById('answer-4').innerHTML = answersQ1[3] ;  // These are the belonging answers 
+
+}else if (randoNum === 1){
+    document.getElementById('question').innerHTML = questions[1]; // JS conditional for the question 
+    document.getElementById('answer-1').innerHTML = answersQ2[0];// These are the belonging answers 
+    document.getElementById('answer-2').innerHTML = answersQ2[1];// These are the belonging answers         CORRECT ANSWER
+    document.getElementById('answer-3').innerHTML = answersQ2[2];// These are the belonging answers 
+    document.getElementById('answer-4').innerHTML = answersQ2[3];// These are the belonging answers 
+
+}else if(randoNum === 2){
+    document.getElementById('question').innerHTML = questions[2]; // JS conditional for the question 
+    document.getElementById('answer-1').innerHTML = answersQ3[0];// These are the belonging answers 
+    document.getElementById('answer-2').innerHTML = answersQ3[1];// These are the belonging answers 
+    document.getElementById('answer-3').innerHTML = answersQ3[2];// These are the belonging answers         CORRECT ANSWER
+    document.getElementById('answer-4').innerHTML = answersQ3[3];// These are the belonging answers                                                            
+}else{
+    document.getElementById('question').innerHTML = questions[3]; // JS conditional for the question    
+    document.getElementById('answer-1').innerHTML = answersQ4[0];// These are the belonging answers         CORRECT ANSWER
+    document.getElementById('answer-2').innerHTML = answersQ4[1];// These are the belonging answers 
+    document.getElementById('answer-3').innerHTML = answersQ4[2];// These are the belonging answers 
+    document.getElementById('answer-4').innerHTML = answersQ4[3];// These are the belonging answers   
+}
+
+const ansCorrect = document.getElementById('box-1');
+ansCorrect.addEventListener('click', function handleClick(){
+    document.getElementById('correctornot1').style.visibility = 'visible' ;
+    document.getElementById('box-1').style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
+});
+
+const ansFalse = document.getElementById('box-2');
+ansFalse.addEventListener('click', function handleClick(){
+    document.getElementById('correctornot2').style.visibility = 'visible' ;
+    document.getElementById('box-2').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+});
+
+
+
+</script>
+
+</body>
+</html>
