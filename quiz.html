@@ -50,8 +50,11 @@
 
 </div>
 </main>
+<div class="next-button-ctn">
+<button id="next-btn">Next</button>
+</div>
     
-
+ <!-- SCRIPT -->
 <script>
 // QUESTIONS 
 let questions = ['What is the capital of France ? ',
@@ -78,7 +81,7 @@ let answersQ4 = ['HTML', 'JavaScript' , 'Python', 'C#'];
 let correctAnswers1 = answersQ1[0];
 let correctAnswers2 = answersQ2[1];
 let correctAnswers3 = answersQ3[2];
-let correctAnswers4 = answersQ4[1];
+let correctAnswers4 = answersQ4[0];
 //CONDITIONALS 
 
 if(randoNum === 0){
@@ -120,6 +123,20 @@ ansFalse.addEventListener('click', function handleClick(){
     document.getElementById('correctornot2').style.visibility = 'visible' ;
     document.getElementById('box-2').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
 });
+
+const ansFalse2 = document.getElementById('box-3');
+ansFalse2.addEventListener('click', function handleClick(){
+    document.getElementById('correctornot3').style.visibility = 'visible' ;
+    document.getElementById('box-3').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+});
+
+const ansFalse3 = document.getElementById('box-4');
+ansFalse3.addEventListener('click', function handleClick(){
+    document.getElementById('correctornot4').style.visibility = 'visible' ;
+    document.getElementById('box-4').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+});
+
+
 
 
 

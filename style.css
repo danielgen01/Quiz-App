@@ -81,12 +81,41 @@ html{
 
 
  #question{
-    font-size: 4rem;
+    font-size: 3rem;
     color:white;
     text-shadow: 1px 1px 1px #000000;
     text-align:center;
  }
 
+ #next-btn{
+   outline: none;
+   height: 3.5rem;
+   width: 10rem;
+   left:95%;
+   color:rgb(26, 26, 26); ;
+   font-weight: bold;
+   font-size: 2rem;
+   background-color: #e6cb04;
+   border: 0.1rem solid black;
+   box-shadow: 1px 1px 1px #000000;
+   
+
+ }
+
+ #next-btn:hover{
+   cursor: pointer;
+   background-color: #dfcb38;
+   box-shadow: 0.5px 0.5px 0.5px lightblue;
+   transition: 500ms;
+ }
+
+
+ .next-button-ctn{
+   display: flex;
+   justify-content: flex-end;
+   padding-bottom: 2%;
+
+ }
  
 
  
