@@ -50,8 +50,10 @@
 
 </div>
 </main>
+
+<!-- NEXT BUTTON -->
 <div class="next-button-ctn">
-<button id="next-btn">Next</button>
+<button id="next-btn" onclick="removeBoxShadow();">Next</button>
 </div>
     
  <!-- SCRIPT -->
@@ -144,10 +146,24 @@ ansFalse3.addEventListener('click', function handleClick(){
     document.getElementById('box-4').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
 });
 
+
+
 let nextButton = document.getElementById('next-btn');
 nextButton.addEventListener('click', function handleClick2() {
     randomQuestion();
+   
 } )
+
+let removeBoxShadow = () =>{
+    document.getElementById('box-1').style.boxShadow = '1px 1px 1px 1px #000000';
+    document.getElementById('correctornot1').style.visibility = 'hidden' ;
+    document.getElementById('box-2').style.boxShadow = '1px 1px 1px 1px #000000';
+    document.getElementById('correctornot2').style.visibility = 'hidden' ;
+    document.getElementById('box-3').style.boxShadow = '1px 1px 1px 1px #000000';
+    document.getElementById('correctornot3').style.visibility = 'hidden' ;
+    document.getElementById('box-4').style.boxShadow = '1px 1px 1px 1px #000000';
+    document.getElementById('correctornot4').style.visibility = 'hidden' ;
+}
     
 
 
