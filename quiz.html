@@ -122,6 +122,8 @@ if(randoNum === 0){
 
 randomQuestion();
 
+//Configurate boxShadows when Clicking an answer 
+
 const ansCorrect = document.getElementById('box-1');
 ansCorrect.addEventListener('click', function handleClick(){
     document.getElementById('correctornot1').style.visibility = 'visible' ;
@@ -147,13 +149,13 @@ ansFalse3.addEventListener('click', function handleClick(){
 });
 
 
-
+// configurate next button 
 let nextButton = document.getElementById('next-btn');
 nextButton.addEventListener('click', function handleClick2() {
     randomQuestion();
    
 } )
-
+//remove boxShadow and p when clicking 'next' button 
 let removeBoxShadow = () =>{
     document.getElementById('box-1').style.boxShadow = '1px 1px 1px 1px #000000';
     document.getElementById('correctornot1').style.visibility = 'hidden' ;
