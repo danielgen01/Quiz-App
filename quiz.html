@@ -57,7 +57,9 @@
 </div>
     
  <!-- SCRIPT -->
+
 <script>
+
 // QUESTIONS 
 let questions = ['What is the capital of France ? ',
  'How many buttons or keys has an ordinary english keyboard ? ' ,
@@ -69,12 +71,6 @@ let answersQ1 = ['Paris', 'Madrid' , 'Strasbourg', 'Cologne'];
 let answersQ2 = [92, 104 ,54, 72];
 let answersQ3 = [2000, 1999, 1995, 1996];
 let answersQ4 = ['HTML', 'JavaScript' , 'Python', 'C#'];
-
- 
-  
-
-
-
 
 //CORRECT ANSWERS 
 
@@ -122,7 +118,36 @@ if(randoNum === 0){
 
 randomQuestion();
 
+  
+// Check which box was clicked by user 
+
+let boxClick1 = document.getElementById('box-1');
+
+boxClick1.addEventListener('click', function stapelCash(){
+    console.log('Box 1 was clicked');
+});
+
+let boxClick2 = document.getElementById('box-2');
+
+boxClick2.addEventListener('click', function stapelCash(){
+    console.log('Box 2 was clicked');
+});
+
+let boxClick3 = document.getElementById('box-3');
+
+boxClick3.addEventListener('click', function stapelCash(){
+    console.log('Box 3 was clicked');
+});
+
+let boxClick4 = document.getElementById('box-4');
+
+boxClick4.addEventListener('click', function stapelCash(){
+    console.log('Box 4 was clicked');
+});
+
+
 //Configurate boxShadows when Clicking an answer 
+
 
 const ansCorrect = document.getElementById('box-1');
 ansCorrect.addEventListener('click', function handleClick(){
@@ -148,13 +173,14 @@ ansFalse3.addEventListener('click', function handleClick(){
     document.getElementById('box-4').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
 });
 
-
 // configurate next button 
 let nextButton = document.getElementById('next-btn');
 nextButton.addEventListener('click', function handleClick2() {
     randomQuestion();
    
-} )
+} );
+
+
 //remove boxShadow and p when clicking 'next' button 
 let removeBoxShadow = () =>{
     document.getElementById('box-1').style.boxShadow = '1px 1px 1px 1px #000000';
