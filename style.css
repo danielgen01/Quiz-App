@@ -98,6 +98,10 @@ html{
    background-color: #e6cb04;
    border: 0.1rem solid black;
    box-shadow: 1px 1px 1px #000000;
+   border-radius: 1rem;
+   padding-bottom: 1rem;
+   padding:0.5rem;
+   
    
 
  }
@@ -109,11 +113,18 @@ html{
    transition: 500ms;
  }
 
+ #next-btn:active{
+   cursor: default;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+ }
+
 
  .next-button-ctn{
    display: flex;
    justify-content: flex-end;
    padding-bottom: 2%;
+   
 
  }
  
