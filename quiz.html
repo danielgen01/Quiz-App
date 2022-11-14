@@ -192,10 +192,18 @@ let removeBoxShadow = () =>{
     document.getElementById('box-4').style.boxShadow = '1px 1px 1px 1px #000000';
     document.getElementById('correctornot4').style.visibility = 'hidden' ;
 }
+
+let counter = document.getElementById('next-btn');
+let nextClicks = 0; 
+
+counter.addEventListener("click", () => {
+    nextClicks +=1
+    console.log(nextClicks)
+});
+
+
+
     
-
-
-
 </script>
 
 
