@@ -21,8 +21,8 @@ let correctAnswers4 = answersQ4[0];
 let randomQuestion = () =>{
 
     // NUMBER GENERATOR RANDOM 
-
-    let randoNum = Math.floor(Math.random() * 4) ;
+    
+    let randoNum = Math.floor(Math.random() * 3+1) ;
 
 
 if(randoNum === 0){
@@ -114,12 +114,13 @@ ansFalse3.addEventListener('click', function handleClick(){
 // configurate next button 
 let nextButton = document.getElementById('next-btn');
 nextButton.addEventListener('click', function handleClick2() {
+    if(nextClicks >=3){
+        location.href ="result.html";
+        
+    }else{
     randomQuestion();
-   
-if(nextClicks >=3){
-    location.href ="result.html";
-    
-}
+    }
+
 
 } );
 
