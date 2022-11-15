@@ -24,10 +24,11 @@ html{
     text-align: center;
  }
 
- header h1{
+ header h1,h2{
     font-size: 5rem;
     color: white;
     text-shadow: 1px 1px 1px #000000;
+    text-align: center;
  }
 
  header p {
@@ -128,5 +129,16 @@ html{
 
  }
  
+
+ #try-again{
+  height: 5rem;
+  width: auto;
+  font-size: 4rem;
+  background-color: #e6cb04;
+  border: none;
+  border-radius: 1rem;
+  color: rgb(26, 26, 26);
+
+ }
 
  

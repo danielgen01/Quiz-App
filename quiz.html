@@ -178,6 +178,11 @@ let nextButton = document.getElementById('next-btn');
 nextButton.addEventListener('click', function handleClick2() {
     randomQuestion();
    
+if(nextClicks >=4){
+    location.href ="result.html";
+    
+}
+
 } );
 
 
@@ -200,7 +205,6 @@ counter.addEventListener("click", () => {
     nextClicks +=1
     console.log(nextClicks)
 });
-
 
 
     
