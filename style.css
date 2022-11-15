@@ -138,7 +138,23 @@ html{
   border: none;
   border-radius: 1rem;
   color: rgb(26, 26, 26);
+  text-shadow: 0.5px 0.5px 0.5px #ffffff;
+  box-shadow: 1px 1px 1px #000000;
 
  }
+
+ #try-again:hover{
+   cursor: pointer;
+   background-color:#d1b905 ;
+   box-shadow: 1px 1px 1px #5C0933;
+
+ }
+
+ #try-again:active{
+   cursor: default;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+ }
+
 
  
