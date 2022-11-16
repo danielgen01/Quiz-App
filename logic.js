@@ -21,8 +21,8 @@ let correctAnswers4 = answersQ4[0];
 let randomQuestion = () =>{
 
     // NUMBER GENERATOR RANDOM 
-    
-    let randoNum = Math.floor(Math.random() * 3+1) ;
+    let numbers = [0,1,2,3];
+    let randoNum = Math.floor(Math.random() * numbers.length) ;
 
 
 if(randoNum === 0){
