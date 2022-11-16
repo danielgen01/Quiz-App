@@ -11,17 +11,24 @@
 </head>
 <body>
     <header>
-
+            <!-- RESULT-->
     <h1> Your <span style="color:#e6cb04">result </span></h1>
-    <h2 style="color:white; font-size:5rem; text-shadow: 1px 1px 1px #000000;"> You answered x of x questions <span style="color: #e6cb04 ">correctly</span> <i class="fa-solid fa-hands-clapping"></i></h2>
+    <h2 style="color:white; font-size:5rem; text-shadow: 1px 1px 1px #000000;"> You answered <span id="xofx" style="color:#e6cb04">x </span> of <span id="ofx" style="color:#e6cb04">x</span> questions <span style="color: #e6cb04 ">correctly</span> <i class="fa-solid fa-hands-clapping"></i></h2>
     <br>
     <br>
     <h3 style="font-size: 5rem; color: white; text-shadow: 1px 1px 1px #000000;" >Try again ? </h3>
+
+    <!-- NEXT TRY BUTTON-->
+
     <button id="try-again" onclick="location.href='quiz.html' ">Next try</button>
 
 </header>
     
 <!-- script-->
 <script src="logic.js"></script>
+<script>
+    document.getElementById('xofx').innerHTML = '4';
+    document.getElementById('ofx').innerHTML = '4';
+</script>
 </body>
 </html>
