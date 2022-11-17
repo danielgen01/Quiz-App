@@ -1,4 +1,4 @@
-const questions = [
+const quiz = [
     {
         question:'What is the capital of France ?',
         options:['Paris', 'Madrid', 'Strasbourg', 'Cologne'],
@@ -22,3 +22,5 @@ const questions = [
 
 
 ];
+
+console.log(quiz);
