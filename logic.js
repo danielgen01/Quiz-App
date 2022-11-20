@@ -26,12 +26,12 @@ const q3 =
                 question: 'Which of these languages is only useful for frontend development ? ',
                 options:['HTML', 'JavaScript', 'Python', 'C#'],
                 answer:2
-                }
+                };
 
 
 
 
-console.log(q2.options[0]);
+
 
 
 //CONDITIONALS 
@@ -103,31 +103,54 @@ boxClick4.addEventListener('click', function stapelCash(){
 
 
 //Configurate boxShadows when Clicking an answer 
+   let checkActiveQuestion = () =>{
+    
+    let currentQuestion = document.getElementById('question');
 
+    let box1 = document.getElementById('box-1');
+    let result1 = document.getElementById('correctornot1');
 
+    let box2 = document.getElementById('box-2');
+    let result2 = document.getElementById('correctornot2');
+
+    let box3 = document.getElementById('box-3');
+    let result3 = document.getElementById('correctornot3');
+
+    let box4 = document.getElementById('box-4');
+    let result4 = document.getElementById('correctornot4');
+    
+if(currentQuestion.innerHTML === q1.question ){
 const ansCorrect = document.getElementById('box-1');
 ansCorrect.addEventListener('click', function handleClick(){
-    document.getElementById('correctornot1').style.visibility = 'visible' ;
-    document.getElementById('box-1').style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
+    result1.style.visibility = 'visible' ;
+    box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
 });
-
 const ansFalse = document.getElementById('box-2');
 ansFalse.addEventListener('click', function handleClick(){
-    document.getElementById('correctornot2').style.visibility = 'visible' ;
-    document.getElementById('box-2').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+    result2.style.visibility = 'visible' ;
+    box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
 });
 
 const ansFalse2 = document.getElementById('box-3');
 ansFalse2.addEventListener('click', function handleClick(){
-    document.getElementById('correctornot3').style.visibility = 'visible' ;
-    document.getElementById('box-3').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+    result3.style.visibility = 'visible' ;
+    box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
 });
 
 const ansFalse3 = document.getElementById('box-4');
 ansFalse3.addEventListener('click', function handleClick(){
-    document.getElementById('correctornot4').style.visibility = 'visible' ;
-    document.getElementById('box-4').style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+    result4.style.visibility = 'visible' ;
+    box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
 });
+
+
+   }
+
+   
+};
+
+   checkActiveQuestion();
+
 
 // configurate next button 
 let nextButton = document.getElementById('next-btn');
@@ -137,6 +160,7 @@ nextButton.addEventListener('click', function handleClick2() {
         
     }else{
     randomQuestion();
+    checkActiveQuestion();
     }
 
 
@@ -159,8 +183,8 @@ let counter = document.getElementById('next-btn');
 let nextClicks = 0; 
 
 counter.addEventListener("click", () => {
-    nextClicks +=1
-    console.log(nextClicks)
+    nextClicks +=1;
+    console.log(nextClicks);
 });
 
 
