@@ -58,9 +58,7 @@ const q3 =
 
                 const correctUserChoices = [];
 
-
-
-
+                   
 //CONDITIONALS FOR GENERATING RANDOM QUESTION + THE BELONGING ANSWERS
 
 let randomQuestion = () =>{
@@ -101,6 +99,20 @@ if(randoNum === 0){
 
 randomQuestion();
 
+ //Check current question
+ let checkActiveQuestion = () =>{
+
+    if(currentQuestion.innerHTML === q1.question){
+        console.log('paris')
+    }else{
+        console.log('not paris')
+    }
+    
+    };
+
+    checkActiveQuestion();
+
+
   
 // Check which box was clicked by user 
 
@@ -128,9 +140,10 @@ boxClick4.addEventListener('click', function stapelCash(){
     console.log('Box 4 was clicked');
 });
 
+    
 
 //Configurate boxShadows when Clicking an answer 
-   let checkActiveQuestion = () =>{
+   
     
     
     
@@ -162,9 +175,7 @@ ansFalse3.addEventListener('click', function handleClick(){
    }
 
    
-};
 
-   checkActiveQuestion();
 
 
 // configurate next button 
@@ -175,7 +186,7 @@ nextButton.addEventListener('click', function handleClick2() {
         
     }else{
     randomQuestion();
-    checkActiveQuestion();
+    
     }
 
 
@@ -200,8 +211,8 @@ let nextClicks = 0;
 counter.addEventListener("click", () => {
     nextClicks +=1;
     console.log(nextClicks);
+    checkActiveQuestion();
+    
 });
-
-
 
 
