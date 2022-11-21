@@ -103,12 +103,19 @@ randomQuestion();
  let checkActiveQuestion = () =>{
 
     if(currentQuestion.innerHTML === q1.question){
-        console.log('paris')
-    }else{
-        console.log('not paris')
+        console.log('paris');
+        let correctAnswer = q1.options[0];
+    }else if(currentQuestion.innerHTML === q2.question){
+        console.log('keyboard');
+        let correctAnswer = q2.options[1];
+    }else if(currentQuestion.innerHTML === q3.question){
+        console.log('javascript introduced');
+        let correctAnswer = q3.options[2];
+    }else if(currentQuestion.innerHTML === q4.question){
+        console.log('html ');
+        let correctAnswer = q4.options[0];
     }
-    
-    };
+};
 
     checkActiveQuestion();
 
@@ -116,25 +123,25 @@ randomQuestion();
   
 // Check which box was clicked by user 
 
-let boxClick1 = document.getElementById('box-1');
+let boxClick1 = box1;
 
 boxClick1.addEventListener('click', function stapelCash(){
     console.log('Box 1 was clicked');
 });
 
-let boxClick2 = document.getElementById('box-2');
+let boxClick2 = box2;
 
 boxClick2.addEventListener('click', function stapelCash(){
     console.log('Box 2 was clicked');
 });
 
-let boxClick3 = document.getElementById('box-3');
+let boxClick3 = box3;
 
 boxClick3.addEventListener('click', function stapelCash(){
     console.log('Box 3 was clicked');
 });
 
-let boxClick4 = document.getElementById('box-4');
+let boxClick4 = box4;
 
 boxClick4.addEventListener('click', function stapelCash(){
     console.log('Box 4 was clicked');
@@ -195,15 +202,15 @@ nextButton.addEventListener('click', function handleClick2() {
 
 //remove boxShadow and p when clicking 'next' button 
 let removeBoxShadow = () =>{
-    document.getElementById('box-1').style.boxShadow = '1px 1px 1px 1px #000000';
-    document.getElementById('correctornot1').style.visibility = 'hidden' ;
-    document.getElementById('box-2').style.boxShadow = '1px 1px 1px 1px #000000';
-    document.getElementById('correctornot2').style.visibility = 'hidden' ;
-    document.getElementById('box-3').style.boxShadow = '1px 1px 1px 1px #000000';
-    document.getElementById('correctornot3').style.visibility = 'hidden' ;
-    document.getElementById('box-4').style.boxShadow = '1px 1px 1px 1px #000000';
-    document.getElementById('correctornot4').style.visibility = 'hidden' ;
-}
+    box1.style.boxShadow = '1px 1px 1px 1px #000000';
+    result1.style.visibility = 'hidden' ;
+    box2.style.boxShadow = '1px 1px 1px 1px #000000';
+    result2.style.visibility = 'hidden' ;
+    box3.style.boxShadow = '1px 1px 1px 1px #000000';
+    result3.style.visibility = 'hidden' ;
+    box4.style.boxShadow = '1px 1px 1px 1px #000000';
+    result4.style.visibility = 'hidden' ;
+};
 
 let counter = document.getElementById('next-btn');
 let nextClicks = 0; 
