@@ -28,13 +28,40 @@ const q3 =
                 answer:2
                 };
 
+                // get DOM elements 
+
+
+                let currentQuestion = document.getElementById('question');
+
+                let box1 = document.getElementById('box-1');
+                let answer1 = document.getElementById('answer-1')
+                let result1 = document.getElementById('correctornot1');
+            
+                let box2 = document.getElementById('box-2');
+                let result2 = document.getElementById('correctornot2');
+                let answer2 = document.getElementById('answer-2')
+            
+                let box3 = document.getElementById('box-3');
+                let result3 = document.getElementById('correctornot3');
+                let answer3 = document.getElementById('answer-3')
+            
+                let box4 = document.getElementById('box-4');
+                let result4 = document.getElementById('correctornot4');
+                let answer4 = document.getElementById('answer-4')
 
 
 
 
 
 
-//CONDITIONALS 
+                // get correct answers
+
+                const correctUserChoices = [];
+
+
+
+
+//CONDITIONALS FOR GENERATING RANDOM QUESTION + THE BELONGING ANSWERS
 
 let randomQuestion = () =>{
 
@@ -44,31 +71,31 @@ let randomQuestion = () =>{
 
 
 if(randoNum === 0){
-  document.getElementById('question').innerHTML = q1.question ; // JS conditional for the question 
-  document.getElementById('answer-1').innerHTML = q1.options[0] ; // These are the belonging answers          CORRECT ANSWER
-  document.getElementById('answer-2').innerHTML = q1.options[1] ; // These are the belonging answers 
-  document.getElementById('answer-3').innerHTML = q1.options[2] ; // These are the belonging answers 
-  document.getElementById('answer-4').innerHTML = q1.options[3] ; //These are the belonging answers 
+  currentQuestion.innerHTML = q1.question ; // JS conditional for the question 
+  answer1.innerHTML = q1.options[0] ; // These are the belonging answers          CORRECT ANSWER
+  answer2.innerHTML = q1.options[1] ; // These are the belonging answers 
+  answer3.innerHTML = q1.options[2] ; // These are the belonging answers 
+  answer4.innerHTML = q1.options[3] ; // These are the belonging answers 
 
 }else if (randoNum === 1){
-    document.getElementById('question').innerHTML = q2.question; // JS conditional for the question 
-    document.getElementById('answer-1').innerHTML = q2.options[0];// These are the belonging answers 
-    document.getElementById('answer-2').innerHTML = q2.options[1];// These are the belonging answers         CORRECT ANSWER
-    document.getElementById('answer-3').innerHTML = q2.options[2];// These are the belonging answers 
-    document.getElementById('answer-4').innerHTML = q2.options[3];// These are the belonging answers 
+    currentQuestion.innerHTML = q2.question; // JS conditional for the question 
+    answer1.innerHTML = q2.options[0];// These are the belonging answers 
+    answer2.innerHTML = q2.options[1];// These are the belonging answers         CORRECT ANSWER
+    answer3.innerHTML = q2.options[2];// These are the belonging answers 
+    answer4.innerHTML = q2.options[3];// These are the belonging answers 
 
 }else if(randoNum === 2){
-    document.getElementById('question').innerHTML = q3.question; // JS conditional for the question 
-    document.getElementById('answer-1').innerHTML = q3.options[0];// These are the belonging answers 
-    document.getElementById('answer-2').innerHTML = q3.options[1];// These are the belonging answers 
-    document.getElementById('answer-3').innerHTML = q3.options[2];// These are the belonging answers         CORRECT ANSWER
-    document.getElementById('answer-4').innerHTML = q3.options[3];// These are the belonging answers                                                            
+    currentQuestion.innerHTML = q3.question; // JS conditional for the question 
+    answer1.innerHTML = q3.options[0];// These are the belonging answers 
+    answer2.innerHTML = q3.options[1];// These are the belonging answers 
+    answer3.innerHTML = q3.options[2];// These are the belonging answers         CORRECT ANSWER
+    answer4.innerHTML = q3.options[3];// These are the belonging answers                                                            
 }else{
-    document.getElementById('question').innerHTML = q4.question; // JS conditional for the question    
-    document.getElementById('answer-1').innerHTML = q4.options[0];// These are the belonging answers         CORRECT ANSWER
-    document.getElementById('answer-2').innerHTML = q4.options[1];// These are the belonging answers 
-    document.getElementById('answer-3').innerHTML = q4.options[2];// These are the belonging answers 
-    document.getElementById('answer-4').innerHTML = q4.options[3];// These are the belonging answers   
+    currentQuestion.innerHTML = q4.question; // JS conditional for the question    
+    answer1.innerHTML = q4.options[0];// These are the belonging answers         CORRECT ANSWER
+    answer2.innerHTML = q4.options[1];// These are the belonging answers 
+    answer3.innerHTML = q4.options[2];// These are the belonging answers 
+    answer4.innerHTML = q4.options[3];// These are the belonging answers   
 }
 };
 
@@ -105,19 +132,7 @@ boxClick4.addEventListener('click', function stapelCash(){
 //Configurate boxShadows when Clicking an answer 
    let checkActiveQuestion = () =>{
     
-    let currentQuestion = document.getElementById('question');
-
-    let box1 = document.getElementById('box-1');
-    let result1 = document.getElementById('correctornot1');
-
-    let box2 = document.getElementById('box-2');
-    let result2 = document.getElementById('correctornot2');
-
-    let box3 = document.getElementById('box-3');
-    let result3 = document.getElementById('correctornot3');
-
-    let box4 = document.getElementById('box-4');
-    let result4 = document.getElementById('correctornot4');
+    
     
 if(currentQuestion.innerHTML === q1.question ){
 const ansCorrect = document.getElementById('box-1');
