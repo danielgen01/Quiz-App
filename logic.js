@@ -59,12 +59,41 @@ const q3 =
                 
                 const correctUserChoices = [];
 
-                let userChoice = 0; 
-                
-                
+               
 
 
-                //Configurate question Attributes depening on which number was generated
+
+
+                
+
+// declare next button 
+let nextButton = document.getElementById('next-btn');
+
+// Gray out next btn 
+
+    let disableNextButton = () =>{
+    nextButton.style.backgroundColor = 'grey';
+    nextButton.setAttribute('disabled', 'true');
+    nextButton.style.cursor = 'not-allowed';
+    nextButton.title = 'Please choose an answer before going to the next question'
+
+    }
+
+    // enable next button func
+
+
+    let enableNextButton = () =>{
+    nextButton.style.backgroundColor = '#e6cb04';
+    nextButton.removeAttribute('disabled', 'false');
+    nextButton.style.cursor = 'pointer';
+
+    };
+
+    
+    
+
+
+                //Configurate question Attributes depending on which number was generated
 
     let questionOneAttributes = () =>{
 
@@ -80,24 +109,24 @@ const q3 =
         box1.addEventListener('click', function(){
           box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
           result1.style.visibility = 'visible' ;
-          userChoice = 1;
+          enableNextButton();
           correctUserChoices.push(1);
           })
           box2.addEventListener('click', function(){
               box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
               result2.style.visibility = 'visible' ;
-              userChoice = 1;
+              enableNextButton();
               })
               box3.addEventListener('click', function(){
                   box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                   result3.style.visibility = 'visible' ;
-                  userChoice = 1;
+                  enableNextButton();
                   })
       
                   box4.addEventListener('click', function(){
                       box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                       result4.style.visibility = 'visible' ;
-                      userChoice = 1;
+                      enableNextButton();
                       })
 
 
@@ -118,24 +147,24 @@ const q3 =
     box1.addEventListener('click', function(){
         box1.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
-        userChoice = 1;
+        enableNextButton();
         })
         box2.addEventListener('click', function(){
             box2.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
-            userChoice = 1;
+            enableNextButton();
             correctUserChoices.push(1);
             })
             box3.addEventListener('click', function(){
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result3.style.visibility = 'visible' ;
-                userChoice = 1;
+                enableNextButton();
                 })
     
                 box4.addEventListener('click', function(){
                     box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                     result4.style.visibility = 'visible' ;
-                    userChoice = 1;
+                    enableNextButton();
                     })
 
 
@@ -157,24 +186,24 @@ const q3 =
         box1.addEventListener('click', function(){
             box1.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
             result1.style.visibility = 'visible' ;
-            userChoice = 1;
-            })
+            enableNextButton();
+                    })
             box2.addEventListener('click', function(){
                 box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result2.style.visibility = 'visible' ;
-                userChoice = 1;
+                enableNextButton();
                 })
                 box3.addEventListener('click', function(){
                     box3.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
                     result3.style.visibility = 'visible' ;
-                    userChoice = 1;
+                    enableNextButton();
                     correctUserChoices.push(1);
                     })
         
                     box4.addEventListener('click', function(){
                         box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                         result4.style.visibility = 'visible' ;
-                        userChoice = 1;
+                        enableNextButton();
                         })
     };
 
@@ -194,25 +223,28 @@ const q3 =
     box1.addEventListener('click', function(){
         box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
-        userChoice = 1;
+        enableNextButton();
         correctUserChoices.push(1);
         })
         box2.addEventListener('click', function(){
             box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
-            userChoice = 1;
+            enableNextButton();
             })
             box3.addEventListener('click', function(){
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result3.style.visibility = 'visible' ;
-                userChoice = 1;
+                enableNextButton();
                 })
     
                 box4.addEventListener('click', function(){
                     box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                     result4.style.visibility = 'visible' ;
-                    userChoice = 1;
+                    enableNextButton();
                     })
+
+
+                   
     };
 
                    
@@ -239,29 +271,8 @@ const q3 =
 
     };
 
+disableNextButton();
 randomQuestion();
-
-
-// configurate next button 
-let nextButton = document.getElementById('next-btn');
-
-
-
-
-nextButton.addEventListener('click', function handleClick() {
-
-    if(nextClicks >=3){
-        location.href ="result.html";
-        
-    }else{
-
-    randomQuestion();
-    
-    }
-
-
-} );
-
 
 //remove boxShadow and 'p'(result) when clicking 'next' button 
 let removeBoxShadow = () =>{
@@ -276,17 +287,22 @@ let removeBoxShadow = () =>{
 };
 
 
-if(userChoice === 0){
-    nextButton.style.backgroundColor = 'grey';
-    nextButton.setAttribute('disabled', 'disabled');
-    nextButton.style.cursor = 'not-allowed';
-    nextButton.title = 'Please choose an answer before going to the next question'
+// Configurate next button
+nextButton.addEventListener('click', function handleClick() {
 
-}else{
-    nextButton.style.backgroundColor = '#e6cb04';
-    nextButton.removeAttribute('disabled');
-    nextButton.style.cursor = 'pointer';
-}
+    if(nextClicks >=3){
+        location.href ="result.html";
+        
+    }else{
+        
+        randomQuestion();
+        disableNextButton();
+    
+    }
+
+
+} );
+
 
 
 // configurate counter for clicked 'next button'  
@@ -294,11 +310,13 @@ let counter = document.getElementById('next-btn');
 let nextClicks = 0; 
 
 counter.addEventListener("click", () => {
-    if(userChoice != 0){
+    
     nextClicks +=1;
     console.log(nextClicks);
     
-    }
+    
 });
+
+
 
 
