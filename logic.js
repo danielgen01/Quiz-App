@@ -67,13 +67,14 @@ const q3 =
         answer2.innerHTML = q1.options[1] ; // These are the belonging answers 
         answer3.innerHTML = q1.options[2] ; // These are the belonging answers 
         answer4.innerHTML = q1.options[3] ; // These are the belonging answers 
-        result1.innerHTML = 'You got it ! Nice' ;
+        result1.innerHTML = 'You got it ! Nice' + ' <i class="fa-solid fa-hands-clapping"></i>';
         result2.innerHTML = 'Im sorry, youre wrong. Try again';
         result3.innerHTML = 'Im sorry, youre wrong. Try again';
         result4.innerHTML = 'Im sorry, youre wrong. Try again';
         box1.addEventListener('click', function(){
           box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
           result1.style.visibility = 'visible' ;
+          correctUserChoices.push(1);
           })
           box2.addEventListener('click', function(){
               box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
@@ -100,7 +101,7 @@ const q3 =
     answer3.innerHTML = q2.options[2];// These are the belonging answers 
     answer4.innerHTML = q2.options[3];// These are the belonging answers 
     result1.innerHTML = 'Im sorry, youre wrong. Try again';
-    result2.innerHTML = 'You got it ! Nice' ;
+    result2.innerHTML = 'You got it ! Nice'  + ' <i class="fa-solid fa-hands-clapping"></i>';
     result3.innerHTML = 'Im sorry, youre wrong. Try again';
     result4.innerHTML = 'Im sorry, youre wrong. Try again';
 
@@ -111,6 +112,7 @@ const q3 =
         box2.addEventListener('click', function(){
             box2.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
+            correctUserChoices.push(1);
             })
             box3.addEventListener('click', function(){
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
@@ -135,7 +137,7 @@ const q3 =
         answer4.innerHTML = q3.options[3];// These are the belonging answers       
         result1.innerHTML = 'Im sorry, youre wrong. Try again';
         result2.innerHTML = 'Im sorry, youre wrong. Try again';
-        result3.innerHTML = 'You got it ! Nice' ;
+        result3.innerHTML = 'You got it ! Nice'  + ' <i class="fa-solid fa-hands-clapping"></i>' ;
         result4.innerHTML = 'Im sorry, youre wrong. Try again';            
         
         box1.addEventListener('click', function(){
@@ -149,6 +151,7 @@ const q3 =
                 box3.addEventListener('click', function(){
                     box3.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
                     result3.style.visibility = 'visible' ;
+                    correctUserChoices.push(1);
                     })
         
                     box4.addEventListener('click', function(){
@@ -165,7 +168,7 @@ const q3 =
     answer2.innerHTML = q4.options[1];// These are the belonging answers 
     answer3.innerHTML = q4.options[2];// These are the belonging answers 
     answer4.innerHTML = q4.options[3];// These are the belonging answers   
-    result1.innerHTML = 'You got it ! Nice' ;
+    result1.innerHTML = 'You got it ! Nice'  + ' <i class="fa-solid fa-hands-clapping"></i>';
     result2.innerHTML = 'Im sorry, youre wrong. Try again';
     result3.innerHTML = 'Im sorry, youre wrong. Try again';
     result4.innerHTML = 'Im sorry, youre wrong. Try again';
@@ -173,6 +176,7 @@ const q3 =
     box1.addEventListener('click', function(){
         box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
+        correctUserChoices.push(1);
         })
         box2.addEventListener('click', function(){
             box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
