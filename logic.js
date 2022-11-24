@@ -9,14 +9,14 @@ const q1 =
 const q2 = 
     {
         question:'How many buttons or keys has an ordinary english keyboard ? ',
-        options:[92, 104, 54, 72],
+        options:[92, 101, 54, 72],
         answer:1
         };
 
 
 const q3 =  
     {
-            question: 'In which year was JavaScript introduced ?',
+            question: 'In which year was JavaScript invented ?',
             options:[2000, 1999, 1995, 1996],
             answer:2
             };
@@ -196,31 +196,24 @@ const q3 =
                    
 //CONDITIONALS FOR GENERATING RANDOM QUESTION + THE BELONGING ANSWERS
 
-let randomQuestion = () =>{
+    let randomQuestion = () =>{
 
     // NUMBER GENERATOR RANDOM 
     let numbers = [0,1,2,3];
     let randoNum = Math.floor(Math.random() * numbers.length) ;
 
 
-if(randoNum === 0){  //while ? 
-    
-  
+    if(randoNum === 0){  //while ?      
     questionOneAttributes();
-
-}else if (randoNum === 1){
-    
+    }else if (randoNum === 1){    
     questionTwoAttributes();
-
-}else if(randoNum === 2){
-
-    questionThreeAttributes();
- 
-}else{
+    }else if(randoNum === 2){
+    questionThreeAttributes(); 
+    }else{
     questionFourAttributes();
-}
+    }
 
-};
+    };
 
 randomQuestion();
 
