@@ -58,6 +58,8 @@ const q3 =
 
                 const correctUserChoices = [];
 
+                //Configurate question Attributes depening on which number was generated
+
     let questionOneAttributes = () =>{
 
         currentQuestion.innerHTML = q1.question ; // JS conditional for the question 
@@ -88,7 +90,104 @@ const q3 =
                       })
 
 
-    }
+    };
+
+    let questionTwoAttributes = () =>{
+
+        currentQuestion.innerHTML = q2.question; // JS conditional for the question 
+    answer1.innerHTML = q2.options[0];// These are the belonging answers 
+    answer2.innerHTML = q2.options[1];// These are the belonging answers         CORRECT ANSWER
+    answer3.innerHTML = q2.options[2];// These are the belonging answers 
+    answer4.innerHTML = q2.options[3];// These are the belonging answers 
+    result1.innerHTML = 'Im sorry, youre wrong. Try again';
+    result2.innerHTML = 'You got it ! Nice' ;
+    result3.innerHTML = 'Im sorry, youre wrong. Try again';
+    result4.innerHTML = 'Im sorry, youre wrong. Try again';
+
+    box1.addEventListener('click', function(){
+        box1.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+        result1.style.visibility = 'visible' ;
+        })
+        box2.addEventListener('click', function(){
+            box2.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
+            result2.style.visibility = 'visible' ;
+            })
+            box3.addEventListener('click', function(){
+                box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+                result3.style.visibility = 'visible' ;
+                })
+    
+                box4.addEventListener('click', function(){
+                    box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+                    result4.style.visibility = 'visible' ;
+                    })
+
+
+
+
+    };
+
+    let questionThreeAttributes = () =>{
+        currentQuestion.innerHTML = q3.question; // JS conditional for the question 
+        answer1.innerHTML = q3.options[0];// These are the belonging answers 
+        answer2.innerHTML = q3.options[1];// These are the belonging answers 
+        answer3.innerHTML = q3.options[2];// These are the belonging answers         CORRECT ANSWER
+        answer4.innerHTML = q3.options[3];// These are the belonging answers       
+        result1.innerHTML = 'Im sorry, youre wrong. Try again';
+        result2.innerHTML = 'Im sorry, youre wrong. Try again';
+        result3.innerHTML = 'You got it ! Nice' ;
+        result4.innerHTML = 'Im sorry, youre wrong. Try again';            
+        
+        box1.addEventListener('click', function(){
+            box1.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+            result1.style.visibility = 'visible' ;
+            })
+            box2.addEventListener('click', function(){
+                box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+                result2.style.visibility = 'visible' ;
+                })
+                box3.addEventListener('click', function(){
+                    box3.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
+                    result3.style.visibility = 'visible' ;
+                    })
+        
+                    box4.addEventListener('click', function(){
+                        box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+                        result4.style.visibility = 'visible' ;
+                        })
+    };
+
+
+    let questionFourAttributes = () =>{
+
+        currentQuestion.innerHTML = q4.question; // JS conditional for the question    
+    answer1.innerHTML = q4.options[0];// These are the belonging answers         CORRECT ANSWER
+    answer2.innerHTML = q4.options[1];// These are the belonging answers 
+    answer3.innerHTML = q4.options[2];// These are the belonging answers 
+    answer4.innerHTML = q4.options[3];// These are the belonging answers   
+    result1.innerHTML = 'You got it ! Nice' ;
+    result2.innerHTML = 'Im sorry, youre wrong. Try again';
+    result3.innerHTML = 'Im sorry, youre wrong. Try again';
+    result4.innerHTML = 'Im sorry, youre wrong. Try again';
+
+    box1.addEventListener('click', function(){
+        box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
+        result1.style.visibility = 'visible' ;
+        })
+        box2.addEventListener('click', function(){
+            box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+            result2.style.visibility = 'visible' ;
+            })
+            box3.addEventListener('click', function(){
+                box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+                result3.style.visibility = 'visible' ;
+                })
+    
+                box4.addEventListener('click', function(){
+                    box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
+                    result4.style.visibility = 'visible' ;
+                    })
+    };
 
                    
 //CONDITIONALS FOR GENERATING RANDOM QUESTION + THE BELONGING ANSWERS
@@ -106,37 +205,15 @@ if(randoNum === 0){  //while ?
     questionOneAttributes();
 
 }else if (randoNum === 1){
-    currentQuestion.innerHTML = q2.question; // JS conditional for the question 
-    answer1.innerHTML = q2.options[0];// These are the belonging answers 
-    answer2.innerHTML = q2.options[1];// These are the belonging answers         CORRECT ANSWER
-    answer3.innerHTML = q2.options[2];// These are the belonging answers 
-    answer4.innerHTML = q2.options[3];// These are the belonging answers 
-    result1.innerHTML = 'Im sorry, youre wrong. Try again';
-    result2.innerHTML = 'You got it ! Nice' ;
-    result3.innerHTML = 'Im sorry, youre wrong. Try again';
-    result4.innerHTML = 'Im sorry, youre wrong. Try again';
     
+    questionTwoAttributes();
 
 }else if(randoNum === 2){
-    currentQuestion.innerHTML = q3.question; // JS conditional for the question 
-    answer1.innerHTML = q3.options[0];// These are the belonging answers 
-    answer2.innerHTML = q3.options[1];// These are the belonging answers 
-    answer3.innerHTML = q3.options[2];// These are the belonging answers         CORRECT ANSWER
-    answer4.innerHTML = q3.options[3];// These are the belonging answers       
-    result1.innerHTML = 'Im sorry, youre wrong. Try again';
-    result2.innerHTML = 'Im sorry, youre wrong. Try again';
-    result3.innerHTML = 'You got it ! Nice' ;
-    result4.innerHTML = 'Im sorry, youre wrong. Try again';                                                     
+
+    questionThreeAttributes();
+ 
 }else{
-    currentQuestion.innerHTML = q4.question; // JS conditional for the question    
-    answer1.innerHTML = q4.options[0];// These are the belonging answers         CORRECT ANSWER
-    answer2.innerHTML = q4.options[1];// These are the belonging answers 
-    answer3.innerHTML = q4.options[2];// These are the belonging answers 
-    answer4.innerHTML = q4.options[3];// These are the belonging answers   
-    result1.innerHTML = 'You got it ! Nice' ;
-    result2.innerHTML = 'Im sorry, youre wrong. Try again';
-    result3.innerHTML = 'Im sorry, youre wrong. Try again';
-    result4.innerHTML = 'Im sorry, youre wrong. Try again';
+    questionFourAttributes();
 }
 
 };
