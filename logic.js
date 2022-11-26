@@ -54,10 +54,10 @@ const q3 =
 
 
 
-                // get correct answers
+    // get correct answers
 
                 
-                const correctUserChoices = [];
+    const correctUserChoices = [];
            
 
     // declare next button 
@@ -243,7 +243,7 @@ const q3 =
 
     };
     
-
+    //number array + previous numers array
     let prevNumbers = [];
     let numbers = [0,1,2,3];
 
@@ -258,7 +258,7 @@ const q3 =
     
     let randoNum = Math.floor(Math.random() * numbers.length) ;
 
-                  
+     //loops through both arrays and check for same elements + prevents from repeating questions              
         for(let i = 0 ; i < numbers.length; i++){
             for(let j = 0 ; j < prevNumbers.length; j++){
                 if(randoNum === prevNumbers[j]){
@@ -269,7 +269,8 @@ const q3 =
                 }
             }
         }
-       
+
+       //conditionals for question + answer content 
         
     if       (randoNum === 0){       
     questionOneAttributes();
@@ -281,12 +282,13 @@ const q3 =
     questionFourAttributes();
     }
   
-
+    //pushes the previous numbers into a new array 
     if(prevNumbers.includes(randoNum)){
         return
     }else{
         prevNumbers.push(randoNum);
     }
+    //console.log the previous Numbers
         console.log(prevNumbers);  
 };
     
