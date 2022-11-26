@@ -58,18 +58,12 @@ const q3 =
 
                 
                 const correctUserChoices = [];
+           
 
-               
+    // declare next button 
+    let nextButton = document.getElementById('next-btn');
 
-
-
-
-                
-
-// declare next button 
-let nextButton = document.getElementById('next-btn');
-
-// Gray out next btn 
+    // Gray out next btn || func
 
     let disableNextButton = () =>{
     nextButton.style.backgroundColor = 'grey';
@@ -88,12 +82,9 @@ let nextButton = document.getElementById('next-btn');
     nextButton.style.cursor = 'pointer';
 
     };
-
-    
     
 
-
-                //Configurate question Attributes depending on which number was generated
+    //Configurate question Attributes depending on which number was generated
 
     let questionOneAttributes = () =>{
 
@@ -134,7 +125,7 @@ let nextButton = document.getElementById('next-btn');
 
     let questionTwoAttributes = () =>{
 
-        currentQuestion.innerHTML = q2.question; // JS conditional for the question 
+    currentQuestion.innerHTML = q2.question; // JS conditional for the question 
     answer1.innerHTML = q2.options[0];// These are the belonging answers 
     answer2.innerHTML = q2.options[1];// These are the belonging answers         CORRECT ANSWER
     answer3.innerHTML = q2.options[2];// These are the belonging answers 
@@ -210,7 +201,7 @@ let nextButton = document.getElementById('next-btn');
 
     let questionFourAttributes = () =>{
 
-        currentQuestion.innerHTML = q4.question; // JS conditional for the question    
+    currentQuestion.innerHTML = q4.question; // JS conditional for the question    
     answer1.innerHTML = q4.options[0];// These are the belonging answers         CORRECT ANSWER
     answer2.innerHTML = q4.options[1];// These are the belonging answers 
     answer3.innerHTML = q4.options[2];// These are the belonging answers 
@@ -220,45 +211,66 @@ let nextButton = document.getElementById('next-btn');
     result3.innerHTML = 'Im sorry, youre wrong. Try again';
     result4.innerHTML = 'Im sorry, youre wrong. Try again';
 
+
     box1.addEventListener('click', function(){
         box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
         enableNextButton();
         correctUserChoices.push(1);
         })
+
+
         box2.addEventListener('click', function(){
             box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
             enableNextButton();
             })
+
+
             box3.addEventListener('click', function(){
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result3.style.visibility = 'visible' ;
                 enableNextButton();
                 })
+
     
                 box4.addEventListener('click', function(){
                     box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                     result4.style.visibility = 'visible' ;
                     enableNextButton();
                     })
+                  
 
-
-                   
     };
-
-                   
-//CONDITIONALS FOR GENERATING RANDOM QUESTION + THE BELONGING ANSWERS
-
-    let randomQuestion = () =>{
-        
-
-    // NUMBER GENERATOR RANDOM 
-    let numbers = [0,1,2,3];
-    let randoNum = Math.floor(Math.random() * numbers.length) ;
-
     
 
+    let prevNumbers = [];
+    let numbers = [0,1,2,3];
+
+   
+    //CONDITIONALS FOR GENERATING RANDOM QUESTION + THE BELONGING ANSWERS
+
+    let randomQuestion = () =>{
+            
+
+    // NUMBER GENERATOR RANDOM || QUESTION GENERATOR 
+        
+    
+    let randoNum = Math.floor(Math.random() * numbers.length) ;
+
+                  
+        for(let i = 0 ; i < numbers.length; i++){
+            for(let j = 0 ; j < prevNumbers.length; j++){
+                if(randoNum === prevNumbers[j]){
+                    console.log('MATCH');      
+                    randomQuestion();
+                    return;                                                   
+                    
+                }
+            }
+        }
+       
+        
     if       (randoNum === 0){       
     questionOneAttributes();
     }else if (randoNum === 1){    
@@ -268,11 +280,20 @@ let nextButton = document.getElementById('next-btn');
     }else{
     questionFourAttributes();
     }
+  
 
-    };
+    if(prevNumbers.includes(randoNum)){
+        return
+    }else{
+        prevNumbers.push(randoNum);
+    }
+        console.log(prevNumbers);  
+};
+    
 
 disableNextButton();
 randomQuestion();
+
 
 //remove boxShadow and 'p'(result) when clicking 'next' button 
 let removeBoxShadow = () =>{
@@ -287,8 +308,8 @@ let removeBoxShadow = () =>{
 };
 
 
-// Configurate next button
-nextButton.addEventListener('click', function handleClick() {
+    // Configurate next button
+    nextButton.addEventListener('click', function handleClick() {
 
     if(nextClicks >=3){
         location.href ="result.html";
@@ -313,6 +334,7 @@ counter.addEventListener("click", () => {
     
     nextClicks +=1;
     console.log(nextClicks);
+    
     
     
 });
