@@ -50,15 +50,26 @@ const q3 =
                 let answer4 = document.getElementById('answer-4')
 
 
-
-
-
-
     // get correct answers
 
-                
-    const correctUserChoices = [];
-           
+    let correctUserChoices = [];
+              
+    
+    let checkCorrectAnswers = () =>{
+        if(correctUserChoices.length > 4){
+            correctUserChoices.pop();
+        }
+    };
+
+    //disable boxes || func                 //BUG: function funktioniert noch nicht
+
+    let disableBoxes = () =>{
+        box1.setAttribute('disabled', 'true');
+        box2.setAttribute('disabled', 'true');
+        box3.setAttribute('disabled', 'true');
+        box3.setAttribute('disabled', 'true');
+    }
+                  
 
     // declare next button 
     let nextButton = document.getElementById('next-btn');
@@ -82,7 +93,8 @@ const q3 =
     nextButton.style.cursor = 'pointer';
 
     };
-    
+
+      
 
     //Configurate question Attributes depending on which number was generated
 
@@ -97,11 +109,12 @@ const q3 =
         result2.innerHTML = 'Im sorry, youre wrong. Try again';
         result3.innerHTML = 'Im sorry, youre wrong. Try again';
         result4.innerHTML = 'Im sorry, youre wrong. Try again';
+
         box1.addEventListener('click', function(){
           box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
           result1.style.visibility = 'visible' ;
           enableNextButton();
-          correctUserChoices.push(1);
+          correctUserChoices.push('x');                               // BUG: console loggt an der stelle zwei Einsen bei geklickter box
           })
           box2.addEventListener('click', function(){
               box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
@@ -144,7 +157,8 @@ const q3 =
             box2.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
             enableNextButton();
-            correctUserChoices.push(1);
+            correctUserChoices.push('x');        
+            
             })
             box3.addEventListener('click', function(){
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
@@ -188,7 +202,8 @@ const q3 =
                     box3.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
                     result3.style.visibility = 'visible' ;
                     enableNextButton();
-                    correctUserChoices.push(1);
+                    correctUserChoices.push('x');        
+                     
                     })
         
                     box4.addEventListener('click', function(){
@@ -216,7 +231,8 @@ const q3 =
         box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
         enableNextButton();
-        correctUserChoices.push(1);
+        correctUserChoices.push('x');        
+         
         })
 
 
@@ -242,7 +258,7 @@ const q3 =
                   
 
     };
-    
+      
     //number array + previous numers array
     let prevNumbers = [];
     let numbers = [0,1,2,3];
@@ -320,7 +336,7 @@ let removeBoxShadow = () =>{
         
         randomQuestion();
         disableNextButton();
-    
+            
     }
 
 
@@ -336,10 +352,14 @@ counter.addEventListener("click", () => {
     
     nextClicks +=1;
     console.log(nextClicks);
-    
-    
+    checkCorrectAnswers();
+       
     
 });
+
+
+
+//  console.log(`The 'correct user choices' value is: ${correctUserChoices}`); 
 
 
 

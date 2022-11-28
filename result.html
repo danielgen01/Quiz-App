@@ -26,10 +26,12 @@
     
 <!-- script-->
 <script src="logic.js"></script>
-<script>
-                let correctAnswers = 4; // let correctAnswers = correctUserChoices.innerHTML ; 
+<script>          
+                
+                let correctAnswers = correctUserChoices.length ; 
                 let totalQuestions = 4;
-    
+                console.log(correctAnswers);
+                
                 document.getElementById('xofx').innerText = `You answered ${correctAnswers} of ${totalQuestions} questions correctly ! `
 </script>
 </body>
