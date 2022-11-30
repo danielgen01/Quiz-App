@@ -26,7 +26,7 @@ const q3 =
             {
                 question: 'Which of these languages is only useful for frontend development ? ',
                 options:['HTML', 'JavaScript', 'Python', 'C#'],
-                answer:2
+                answer:0
                 };
 
                 // get DOM elements 
@@ -100,7 +100,7 @@ const q3 =
 
     };
 
-      
+       
 
     //Configurate question Attributes depending on which number was generated
 
@@ -120,10 +120,12 @@ const q3 =
           box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
           result1.style.visibility = 'visible' ;
           enableNextButton();
+          if(currentQuestion.innerHTML === q1.question){
            correctUserChoices.push('x');   
-          
+          }
+                 
             
-          })
+          }, {once : true})
           box2.addEventListener('click', function(){
               box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
               result2.style.visibility = 'visible' ;
@@ -165,11 +167,13 @@ const q3 =
             box2.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
             enableNextButton();
-            correctUserChoices.push('x');       
+            if(currentQuestion.innerHTML === q2.question){
+                correctUserChoices.push('x');   
+               }       
     
        
             
-            })
+            }, {once : true})
             box3.addEventListener('click', function(){
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result3.style.visibility = 'visible' ;
@@ -212,11 +216,13 @@ const q3 =
                     box3.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
                     result3.style.visibility = 'visible' ;
                     enableNextButton();
-                    correctUserChoices.push('x');      
+                    if(currentQuestion.innerHTML === q3.question){
+                        correctUserChoices.push('x');   
+                       }     
                     
                      
                      
-                    })
+                    }, {once : true})
         
                     box4.addEventListener('click', function(){
                         box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
@@ -244,10 +250,12 @@ const q3 =
         box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
         enableNextButton();
-        correctUserChoices.push('x');        
+        if(currentQuestion.innerHTML === q4.question){
+            correctUserChoices.push('x');   
+           }     
             
          
-        })
+        }, {once : true})
 
 
         box2.addEventListener('click', function(){
@@ -347,6 +355,7 @@ let removeBoxShadow = () =>{
        
     if(nextClicks >=3){
         location.href ="result.html";
+        sessionStorage.setItem('choices', JSON.stringify(correctUserChoices));
         
     }else{
         sessionStorage.setItem('choices', JSON.stringify(correctUserChoices));
