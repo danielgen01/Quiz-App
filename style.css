@@ -169,13 +169,14 @@ html{
   display: none;
   margin-top: 5%;
   height: 15rem;
+  margin-left: 45%;
  }
 
  #emoji-sad{
   margin-top: 5%;
   display: none;
   height: 15rem;
-  left: 50%;
+  margin-left: 45%;
   
  }
 
@@ -188,6 +189,14 @@ html{
 
   html{
     font-size: 9px;
+  }
+
+  #emoji-sad{
+    margin-left: 30%;
+  }
+
+  #emoji-nice{
+    margin-left: 30%;
   }
 }
 
