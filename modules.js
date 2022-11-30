@@ -1,1 +1,2 @@
-let correctUserChoices = [];
+// export 
+export let correctUserChoices = [];

@@ -1,4 +1,5 @@
 //Questions
+  
 const q1 = 
 {
     question:'What is the capital of France ?',
@@ -51,15 +52,20 @@ const q3 =
 
 
     // get correct answers
+    import {correctUserChoices} from "./modules.js";
+     
+   
 
-    let correctUserChoices = [];
-              
+
+
+    let logCurrentCorrectAnswers = () =>{
+    console.log(`correctUserChoices length is ${correctUserChoices.length}`);
+    }
+                        
+                
+             
+                                
     
-    let checkCorrectAnswers = () =>{
-        if(correctUserChoices.length > 4){
-            correctUserChoices.pop();
-        }
-    };
 
     //disable boxes || func                 //BUG: function funktioniert noch nicht
 
@@ -114,7 +120,9 @@ const q3 =
           box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
           result1.style.visibility = 'visible' ;
           enableNextButton();
-          correctUserChoices.push('x');                               // BUG: console loggt an der stelle zwei Einsen bei geklickter box
+           correctUserChoices.push('x');   
+          
+            
           })
           box2.addEventListener('click', function(){
               box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
@@ -133,7 +141,7 @@ const q3 =
                       enableNextButton();
                       })
 
-
+               
     };
 
     let questionTwoAttributes = () =>{
@@ -157,7 +165,9 @@ const q3 =
             box2.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
             enableNextButton();
-            correctUserChoices.push('x');        
+            correctUserChoices.push('x');       
+    
+       
             
             })
             box3.addEventListener('click', function(){
@@ -173,7 +183,7 @@ const q3 =
                     })
 
 
-
+                   
 
     };
 
@@ -202,7 +212,9 @@ const q3 =
                     box3.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
                     result3.style.visibility = 'visible' ;
                     enableNextButton();
-                    correctUserChoices.push('x');        
+                    correctUserChoices.push('x');      
+                    
+                     
                      
                     })
         
@@ -211,6 +223,7 @@ const q3 =
                         result4.style.visibility = 'visible' ;
                         enableNextButton();
                         })
+                        
     };
 
 
@@ -232,6 +245,7 @@ const q3 =
         result1.style.visibility = 'visible' ;
         enableNextButton();
         correctUserChoices.push('x');        
+            
          
         })
 
@@ -256,7 +270,7 @@ const q3 =
                     enableNextButton();
                     })
                   
-
+                    
     };
       
     //number array + previous numers array
@@ -305,13 +319,13 @@ const q3 =
         prevNumbers.push(randoNum);
     }
     //console.log the previous Numbers
-        console.log(prevNumbers);  
+        // console.log(prevNumbers);  
 };
     
-
+/*
 disableNextButton();
 randomQuestion();
-
+*/
 
 //remove boxShadow and 'p'(result) when clicking 'next' button 
 let removeBoxShadow = () =>{
@@ -327,20 +341,25 @@ let removeBoxShadow = () =>{
 
 
     // Configurate next button
+    
     nextButton.addEventListener('click', function handleClick() {
-
+      
+       
     if(nextClicks >=3){
         location.href ="result.html";
         
     }else{
-        
+        sessionStorage.setItem('choices', JSON.stringify(correctUserChoices));
         randomQuestion();
         disableNextButton();
-            
+        removeBoxShadow();
+        logCurrentCorrectAnswers();
+       
+          
     }
 
-
-} );
+} ) 
+;
 
 
 
@@ -351,15 +370,18 @@ let nextClicks = 0;
 counter.addEventListener("click", () => {
     
     nextClicks +=1;
-    console.log(nextClicks);
-    checkCorrectAnswers();
+    // console.log(`The current sum of nextClicks is = ${nextClicks}`);
+    
        
     
 });
 
+document.onload = randomQuestion();
+document.onload = disableNextButton();
 
 
-//  console.log(`The 'correct user choices' value is: ${correctUserChoices}`); 
+
+
 
 
 
