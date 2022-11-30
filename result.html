@@ -23,6 +23,11 @@
     <button id="try-again" onclick="location.href='quiz.html' " >Next try</button>
 
 </header>
+
+<footer>
+    <img src="smile-2352472_1280.png" style="max-width:35rem;" id="emoji-nice" >
+    <img src="sad-1533965_1280-removebg-preview.png" style="max-width:35rem;" id="emoji-sad" >
+</footer>
     
 <!-- script-->
 <script src="logic.js" type="module"></script>
@@ -44,6 +49,17 @@
                                              
             
                 document.getElementById('xofx').innerText = `You answered ${correctQuestions} of ${totalQuestions} questions correctly ! `
+
+                let emojiNice = document.getElementById('emoji-nice');
+                let emojiSad = document.getElementById('emoji-sad');
+
+                if(correctQuestions > 2){
+                    emojiNice.style.display = 'flex';
+                    emojiNice.style.marginLeft = '45%';
+                }else{
+                    emojiSad.style.display = 'flex';
+                    emojiSad.style.marginLeft = '45%';
+                }
                 
 </script>
 </body>
