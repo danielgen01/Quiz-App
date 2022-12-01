@@ -10,7 +10,7 @@ const q1 =
 const q2 = 
     {
         question:'How many buttons or keys has an ordinary english keyboard ? ',
-        options:[92, 101, 54, 72],
+        options:[92, 105, 54, 72],
         answer:1
         };
 
