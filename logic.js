@@ -74,7 +74,7 @@ const q3 =
         box2.setAttribute('disabled', 'true');
         box3.setAttribute('disabled', 'true');
         box3.setAttribute('disabled', 'true');
-    }
+    };
                   
 
     // declare next button 
@@ -88,7 +88,7 @@ const q3 =
     nextButton.style.cursor = 'not-allowed';
     nextButton.title = 'Please choose an answer before going to the next question'
 
-    }
+    };
 
     // enable next button func
 
@@ -116,7 +116,7 @@ const q3 =
         result3.innerHTML = 'Im sorry, youre wrong. Try again';
         result4.innerHTML = 'Im sorry, youre wrong. Try again';
 
-        box1.addEventListener('click', function(){
+        box1.addEventListener('click', ()=>{
           box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
           result1.style.visibility = 'visible' ;
           enableNextButton();
@@ -126,18 +126,18 @@ const q3 =
                  
             
           }, {once : true})
-          box2.addEventListener('click', function(){
+          box2.addEventListener('click', ()=>{
               box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
               result2.style.visibility = 'visible' ;
               enableNextButton();
               })
-              box3.addEventListener('click', function(){
+              box3.addEventListener('click', ()=>{
                   box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                   result3.style.visibility = 'visible' ;
                   enableNextButton();
                   })
       
-                  box4.addEventListener('click', function(){
+                  box4.addEventListener('click', ()=>{
                       box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                       result4.style.visibility = 'visible' ;
                       enableNextButton();
@@ -158,12 +158,12 @@ const q3 =
     result3.innerHTML = 'Im sorry, youre wrong. Try again';
     result4.innerHTML = 'Im sorry, youre wrong. Try again';
 
-    box1.addEventListener('click', function(){
+    box1.addEventListener('click',  ()=>{
         box1.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
         enableNextButton();
         })
-        box2.addEventListener('click', function(){
+        box2.addEventListener('click',  ()=>{
             box2.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
             enableNextButton();
@@ -174,13 +174,13 @@ const q3 =
        
             
             }, {once : true})
-            box3.addEventListener('click', function(){
+            box3.addEventListener('click',  ()=>{
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result3.style.visibility = 'visible' ;
                 enableNextButton();
                 })
     
-                box4.addEventListener('click', function(){
+                box4.addEventListener('click',  ()=>{
                     box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                     result4.style.visibility = 'visible' ;
                     enableNextButton();
@@ -202,17 +202,17 @@ const q3 =
         result3.innerHTML = 'You got it ! Nice'  + ' <i class="fa-solid fa-hands-clapping"></i>' ;
         result4.innerHTML = 'Im sorry, youre wrong. Try again';            
         
-        box1.addEventListener('click', function(){
+        box1.addEventListener('click',  ()=>{
             box1.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
             result1.style.visibility = 'visible' ;
             enableNextButton();
                     })
-            box2.addEventListener('click', function(){
+            box2.addEventListener('click',  ()=>{
                 box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result2.style.visibility = 'visible' ;
                 enableNextButton();
                 })
-                box3.addEventListener('click', function(){
+                box3.addEventListener('click',  ()=>{
                     box3.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
                     result3.style.visibility = 'visible' ;
                     enableNextButton();
@@ -224,7 +224,7 @@ const q3 =
                      
                     }, {once : true})
         
-                    box4.addEventListener('click', function(){
+                    box4.addEventListener('click',  ()=>{
                         box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                         result4.style.visibility = 'visible' ;
                         enableNextButton();
@@ -246,7 +246,7 @@ const q3 =
     result4.innerHTML = 'Im sorry, youre wrong. Try again';
 
 
-    box1.addEventListener('click', function(){
+    box1.addEventListener('click',  ()=>{
         box1.style.boxShadow = '5px 5px 5px rgb(0,255,0, 0.5)' ;
         result1.style.visibility = 'visible' ;
         enableNextButton();
@@ -258,21 +258,21 @@ const q3 =
         }, {once : true})
 
 
-        box2.addEventListener('click', function(){
+        box2.addEventListener('click',  ()=>{
             box2.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
             result2.style.visibility = 'visible' ;
             enableNextButton();
             })
 
 
-            box3.addEventListener('click', function(){
+            box3.addEventListener('click',  ()=>{
                 box3.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                 result3.style.visibility = 'visible' ;
                 enableNextButton();
                 })
 
     
-                box4.addEventListener('click', function(){
+                box4.addEventListener('click',  ()=>{
                     box4.style.boxShadow = '5px 5px 5px rgb(255,0,0, 0.5)' ;
                     result4.style.visibility = 'visible' ;
                     enableNextButton();
@@ -285,8 +285,6 @@ const q3 =
     let prevNumbers = [];
     let numbers = [0,1,2,3];
 
-   
-    //CONDITIONALS FOR GENERATING RANDOM QUESTION + THE BELONGING ANSWERS
 
     let randomQuestion = () =>{
             
@@ -326,14 +324,11 @@ const q3 =
     }else{
         prevNumbers.push(randoNum);
     }
-    //console.log the previous Numbers
+    
         // console.log(prevNumbers);  
 };
     
-/*
-disableNextButton();
-randomQuestion();
-*/
+
 
 //remove boxShadow and 'p'(result) when clicking 'next' button 
 let removeBoxShadow = () =>{
@@ -356,6 +351,7 @@ let removeBoxShadow = () =>{
     if(nextClicks >=3){
         location.href ="result.html";
         sessionStorage.setItem('choices', JSON.stringify(correctUserChoices));
+      
         
     }else{
         sessionStorage.setItem('choices', JSON.stringify(correctUserChoices));
@@ -363,12 +359,12 @@ let removeBoxShadow = () =>{
         disableNextButton();
         removeBoxShadow();
         logCurrentCorrectAnswers();
-       
+              
           
     }
 
-} ) 
-;
+} ) ;
+
 
 
 
