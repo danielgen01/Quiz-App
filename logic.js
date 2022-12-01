@@ -2,8 +2,8 @@
   
 const q1 = 
 {
-    question:'What is the capital of France ?',
-    options:['Paris', 'Madrid', 'Strasbourg', 'Cologne'],
+    question:'Which key number hast the "enter" in JavaScript events ? ',
+    options:[13, 11, 7, 1],
     answer:0
     };
 
