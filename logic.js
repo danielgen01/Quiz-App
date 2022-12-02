@@ -2,7 +2,7 @@
   
 const q1 = 
 {
-    question:'Which key number hast the "enter" in JavaScript events ? ',
+    question:'Which key number has the "enter" in JavaScript events ? ',
     options:[13, 11, 7, 1],
     answer:0
     };
