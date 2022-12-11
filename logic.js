@@ -53,30 +53,8 @@ const q3 =
 
     // get correct answers
     import {correctUserChoices} from "./modules.js";
-     
-   
-
-
-
-    let logCurrentCorrectAnswers = () =>{
-    console.log(`correctUserChoices length is ${correctUserChoices.length}`);
-    }
-                        
-                
-             
-                                
     
-
-    //disable boxes || func                 //BUG: function funktioniert noch nicht
-
-    let disableBoxes = () =>{
-        box1.setAttribute('disabled', 'true');
-        box2.setAttribute('disabled', 'true');
-        box3.setAttribute('disabled', 'true');
-        box3.setAttribute('disabled', 'true');
-    };
-                  
-
+    
     // declare next button 
     let nextButton = document.getElementById('next-btn');
 
