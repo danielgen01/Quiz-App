@@ -18,7 +18,9 @@ html{
     
 }
  body{
-    background-color: #0596A8;
+    background-color: grey;
+    background-image: url(hintergrund-videos-100-resimage_v-tlarge169_w-1024.webp);
+   
  }
 
  header{
@@ -58,9 +60,10 @@ html{
 
     .box:hover{
         cursor: pointer;
-        background-color: #0596A8;
+        background-color: #141414;
         transition: 100ms;
         color: #e6cb04;
+        text-shadow: 1px 1px 1px #ffffff;
         box-shadow: 1px 1px 1px 1px lightblue;
      }
 
